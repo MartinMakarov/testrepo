@@ -16,14 +16,13 @@ pipeline {
                 }
             }
 
-        stage ('Test') {
-
+        stage('Test') {
             steps {
-             sh 'make check'
-                }
+                sh 'make check'
             }
-        
-        post {
+        }
+    }
+    post {
         always {
             junit '**/target/*.xml'
         }
