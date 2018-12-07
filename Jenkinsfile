@@ -1,10 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage('Example Build') {
+        stage('Example') {
             steps {
-                sh 'mvn -B clean verify'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
-     }
+    }
 }
